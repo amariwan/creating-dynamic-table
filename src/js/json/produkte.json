@@ -1,0 +1,10 @@
+[{
+  "productID": 1,
+  "designation": "frontend"
+}, {
+  "productID": 2,
+  "designation": "backend"
+}, {
+  "productID": 3,
+  "designation": "Mysql"
+}]

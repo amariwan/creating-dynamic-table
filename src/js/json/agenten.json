@@ -1,0 +1,13 @@
+[{
+  "agentenID": 1,
+  "name": "Administrator",
+  "firstname": "Admin",
+  "agentenstatusID": 1,
+  "letzterzugriff": "2022-08-19 13:49:21"
+}, {
+  "agentenID": 2,
+  "name": "Aland",
+  "firstname": "Mariwan",
+  "agentenstatusID": 4,
+  "letzterzugriff": "2020-10-05 10:11:57"
+}]

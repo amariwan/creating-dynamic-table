@@ -1,0 +1,10 @@
+[{
+  "agentstatusID": 1,
+  "designation": "Dev"
+}, {
+  "agentstatusID": 2,
+  "designation": "Assessment"
+}, {
+  "agentstatusID": 3,
+  "designation": "Training"
+}]
