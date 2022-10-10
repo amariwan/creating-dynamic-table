@@ -1,10 +1,10 @@
-let aktionenClass = new aktionen();
+let aktionenClassVM = new aktionenVM();
 
 $(document).ready(() => {
-	ko.applyBindings(aktionenClass, document.getElementById('Table'));
+	ko.applyBindings(aktionenClassVM, document.getElementById('Table'));
 });
 const loaded = async () => {
-	if (!(await aktionenClass.init())) {
+	if (!(await aktionenClassVM.init())) {
 		console.log('error');
 		return;
 	}

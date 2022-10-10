@@ -39,14 +39,11 @@ class createTable {
 		};
 
 		self.koRows = () => {
-			var data = self.paramData().slice(0, 50);
+			var data = self.paramData().slice(0, 30);
+			// var data = self.paramData();
 			var columns = self.paramColumns();
 			var rows = [];
-			if (self.isFolded() == true) {
-				self.sort(data, self.sortA_Z);
-			} else {
-				self.sort(data, self.sortZ_A);
-			}
+			self.sort(data, self.isFolded() ? self.sortA_Z : self.sortZ_A);
 			for (var i in data) {
 				var datum = data[i];
 				var cells = [];
