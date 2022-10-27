@@ -3,88 +3,93 @@
 
 <head>
 
-  <title>.</title>
-  <!--=============== basic  ===============-->
-  <meta charset="utf-8" />
-  <meta Http-Equiv="Cache-Control" Content="no-cache">
-  <meta Http-Equiv="Pragma" Content="no-cache">
-  <meta Http-Equiv="Expires" Content="0">
-  <meta property="og:title" content="navigation" />
-  <meta property="og:type" content="webapp" />
-  <meta property="og:site_name" content="" />
-  <meta name="robots" content="index" />
-  <meta name="theme-color" content="#000">
-  <meta name="author" content="Aland Mariwan">
-  <meta name="Description" content="navigation" />
-  <!--=============== css  ===============-->
-  <link type="text/css" rel="stylesheet" href="src/css/style.css">
-  <link type="text/css" rel="stylesheet" href="src/css/test.css">
-  <!--=============== JS  ===============-->
-  <script type='text/javascript' src='src/js/extern/jquery-3.6.0.min.js'></script>
-  <script type='text/javascript' src='src/js/extern/knockout-3.5.1.js'></script>
-  <script type='text/javascript' src="src/js/dist/aktionen.class.js"></script>
-  <script type='text/javascript' src="src/js/dist/createTable.class.js"></script>
+    <title>.</title>
+    <!--=============== basic  ===============-->
+    <meta charset="utf-8" />
+    <meta Http-Equiv="Cache-Control" Content="no-cache">
+    <meta Http-Equiv="Pragma" Content="no-cache">
+    <meta Http-Equiv="Expires" Content="0">
+    <meta property="og:title" content="navigation" />
+    <meta property="og:type" content="webapp" />
+    <meta property="og:site_name" content="" />
+    <meta name="robots" content="index" />
+    <meta name="theme-color" content="#000">
+    <meta name="author" content="Aland Mariwan">
+    <meta name="Description" content="navigation" />
+    <!--=============== css  ===============-->
+    <link type="text/css" rel="stylesheet" href="src/css/style.css">
+    <link type="text/css" rel="stylesheet" href="src/css/test.css">
+    <!--=============== JS  ===============-->
+    <script type='text/javascript' src='src/js/extern/jquery-3.6.0.min.js'></script>
+    <script type='text/javascript' src='src/js/extern/knockout-3.5.1.js'></script>
+    <script type='text/javascript' src="src/js/dist/aktionen.class.js"></script>
+    <script type='text/javascript' src="src/js/dist/createTable.class.js"></script>
 </head>
 
 <body>
-  <div id="Table">
-    <header class="navbar navbar-expand-lg blur border-radius-lg z-index-3">
-      <div class="navbar-container d-flex ">
-        <ul class="navbar-nav d-contents">
-          <li> Eigenschaft : <select data-bind="options:propertys, value:selectedSearchBy, optionsText:$data"></select>
-            <div class="search-body">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-search">
+    <div id="Table">
+        <header class="navbar navbar-expand-lg blur border-radius-lg z-index-3">
+            <div class="navbar-container d-flex ">
+                <ul class="navbar-nav d-contents">
+                    <!-- <li> Eigenschaft : <select data-bind="options:propertys, value:selectedSearchBy, optionsText:$data"></select> -->
+                    <div class="search-body">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input type="search" id="searchbox" class="form-control" placeholder="Search..."
-                data-bind="textInput: searchInput,  event: {keypress: enterSearch}">
-              <button data-bind="click: addSearch">Add</button>
-            </div>
-          </li>
-          <li data-bind="foreach: searchTxtLst">
-            <a>
-              <label data-bind="text: $data.Propertys"></label>
-              <label data-bind="text: $data.Value"></label>
-              <label data-bind="click: $parent.removeSeachTxtLst">X</label>
-            </a>
-          </li>
-          <li>
-            <div class="heading">
-              <input type="checkbox" data-bind="checked: selectedAllPropertys" title="Select all/none" />
-              Select/Unselect
-              All
-            </div>
-            <div data-bind="foreach: propertys">
-              <label>
+              </svg> -->
+
+                        <!-- <button data-bind="click: addSearch">Add</button> -->
+                    </div>
+                    </li>
+                    <!-- <li data-bind="foreach: searchTxtLst">
+              <a>
+                <label data-bind="text: $data.Propertys"></label>
+                <label data-bind="text: $data.Value"></label>
+                <label data-bind="click: $parent.removeSeachTxtLst">X</label>
+              </a>
+            </li> -->
+                    <li>
+                        <div class="heading">
+                            <input type="checkbox" data-bind="checked: selectedAllPropertys" title="Select all/none" /> Select/Unselect All
+                        </div>
+                        <div data-bind="foreach: propertys">
+                            <label>
                 <input type="checkbox" data-bind="checkedValue: $data, checked: $parent.selectedPropertys" />
                 <span data-bind="text: $data"></span><br>
               </label>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </li>
-        </ul>
-      </div>
-    </header>
-    <table class="table table-bordered" border="1">
-      <thead>
-        <tr data-bind="foreach: columns">
-          <th data-bind="text: displayName, click:fold"></th>
-        </tr>
-      </thead>
-      <tbody data-bind="foreach: rows">
-        <tr>
-          <!-- ko foreach: cells -->
-          <td class="" data-bind="text: $data"></td>
-          <!-- /ko -->
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <script>
-  </script>
-  <script type='text/javascript' src="src/js/applyBindings.js"></script>
+        </header>
+        <table class="table table-bordered" border="1">
+            <thead>
+                <tr data-bind="foreach: columns">
+                    <th>
+                        <div data-bind="click:fold">
+                            <label data-bind="text: displayName"></label>
+                        </div>
+                    </th>
+                </tr>
+                <tr data-bind="foreach: columns">
+                    <th>
+                        <input type="search" class="form-control" data-bind="attr: {placeholder: displayName}, textInput: searchInput">
+                        <label data-bind="text: searchInput"></label>
+                    </th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: rows">
+                <tr>
+                    <!-- ko foreach: cells -->
+                    <td class="" data-bind="text: $data"> </td>
+                    <!-- /ko -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+    </script>
+    <script type='text/javascript' src="src/js/applyBindings.js"></script>
 </body>
 
 </html>
